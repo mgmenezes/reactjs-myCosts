@@ -3,13 +3,13 @@ import { Summary } from "../Summary";
 import { TransactionTable } from "../TransactionsTable";
 import { Container } from "./styles";
 
-export function Dashboard() {
+export const AppDashboard = function Dashboard() {
   return (
     <Container>
       <Summary />
       <TransactionTable />
     </Container>
   );
-}
+};
 
-export default Dashboard;
+export default AppDashboard;
