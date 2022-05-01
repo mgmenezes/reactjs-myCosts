@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.27.1",
     "miragejs": "^0.1.43",
+    "polished": "^4.2.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-modal": "^3.14.4",
