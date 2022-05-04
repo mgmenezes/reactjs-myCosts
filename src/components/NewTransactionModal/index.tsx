@@ -20,7 +20,7 @@ export const TransactionModal = function NewTransactionModal({
   const [category, setCategory] = useState("");
 
   function handleCreateNewTransaction(event: FormEvent) {
-    event.preventDefault();
+    event.preventDefault(); // com essa chamada a gente previne o comportamento padrao de refresh de toda a tela qdo o formulario é editado.
 
     const data = {
       title,
