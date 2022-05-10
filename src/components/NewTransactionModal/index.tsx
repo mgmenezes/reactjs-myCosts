@@ -15,20 +15,26 @@ export const TransactionModal = function NewTransactionModal({
   onRequestClose,
 }: NewTransactionModalProps) {
   const { createTransaction } = useContext(TransactionContext);
-
   const [type, setType] = useState("deposit");
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState("");
 
-  function handleCreateNewTransaction(event: FormEvent) {
+  async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault(); // com essa chamada a gente previne o comportamento padrao de refresh de toda a tela qdo o formulario é editado.
-    createTransaction({
+    await createTransaction({
       title,
       amount,
       category,
       type,
     });
+
+    // cleanup values on modal
+    setTitle("");
+    setAmount(0);
+    setCategory("");
+    setType("");
+    onRequestClose();
   }
 
   return (
